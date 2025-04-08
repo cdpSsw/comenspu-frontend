@@ -426,7 +426,7 @@ const A_Team = () => {
         alert(`Error to get *Team Member, for this id: ${id}`);
         location.reload();
       }
-    } catch {
+    } catch (err){
       alert(`Internal server ${err}`);
     }
   };
