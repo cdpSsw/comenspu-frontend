@@ -86,16 +86,17 @@ const User_Main = () => {
           studentID: enterstudentID,
           password: enterPass,
         },
-        { withCredentials: true }
-      );
+        { withCredentials: true } // ต้องมีค่านี้เพื่อส่งคุกกี้
+      );      
 
       if (res.status === 200) {
-        // alert("Login Successful");
+        alert("Login Successful");
+        console.log(res.data.token); // ดูค่าที่ได้จาก server
 
         // ใช้ Token จาก Response (ถ้าจำเป็น)
         const token = res.data.token;
         if (token) {
-          Cookies.set("token", token, { expires: 1, secure: true });
+          Cookies.set("token", token, { expires: 1, secure: false });
         }
 
         // ปิด Modal
