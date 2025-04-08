@@ -86,28 +86,28 @@ const User_Main = () => {
           studentID: enterstudentID,
           password: enterPass,
         },
-        { withCredentials: true } // ต้องมีค่านี้เพื่อส่งคุกกี้
-      );      
-
+        { withCredentials: true } // ทำให้ส่งคุกกี้ได้
+      );
+  
       if (res.status === 200) {
         alert("Login Successful");
-        console.log(res.data.token); // ดูค่าที่ได้จาก server
-
+        console.log('token: ', res.data.token); // ตรวจสอบค่า token ที่ได้จาก server
+  
         // ใช้ Token จาก Response (ถ้าจำเป็น)
         const token = res.data.token;
         if (token) {
-          Cookies.set("token", token, { expires: 1, secure: false });
+          // ตั้งค่าคุกกี้ให้ได้ Token ที่ถูกต้อง
+          Cookies.set("token", token, { expires: 1, secure: false }); // secure: true ถ้าใช้ https
         }
-
+  
         // ปิด Modal
         const modal = document.getElementById("signIn-modal");
         const modalInstance = bootstrap.Modal.getInstance(modal);
         modalInstance.hide();
-
+  
         // Redirect ตาม role
         if (res.data.role === "student") {
           navigate("/Student_Dashboard", { state: { student_id: enterstudentID } });
-
         } else if (res.data.role === "admin") {
           window.location.href = "#/Admin_Dashboard";
         }
@@ -118,6 +118,7 @@ const User_Main = () => {
       alert(`Internal server error: ${err.response?.data || err.message}`);
     }
   };
+  
 
   const handleEmblem = () => { location.reload() }
 
