@@ -148,7 +148,7 @@ const A_ShowCase = ({ id }) => {
         alert(`Error to get Showcase, for this id: ${id}`);
         location.reload();
       }
-    } catch {
+    } catch (err) {
       alert(`Internal server ${err}`);
     }
   };
