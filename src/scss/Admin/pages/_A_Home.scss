@@ -1,0 +1,399 @@
+@use "../../var";
+
+.a-home-container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 2vw 8vw;
+
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+
+    .add-new-container {
+      @include var.center-content;
+
+      .btn {
+        border: 1px solid var.$topic-headers;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-out;
+      }
+
+      .btn-add-new {
+        background: none;
+        margin-right: 8px;
+
+        &:hover {
+          color: var.$white;
+          background: var.$topic-headers;
+          box-shadow: 0 0 3px var.$topic-headers;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    .left-side {
+      // width: 100%;
+
+      .showcase-files-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: var.$white;
+        padding: 28px;
+        border-radius: 16px;
+
+        .top-container {
+          width: 100%;
+
+          .topic {
+            font-size: 24px;
+            font-weight: 900;
+          }
+
+          .setting-container {
+            position: relative;
+
+            i {
+              cursor: pointer;
+              font-size: 24px;
+            }
+
+            .setting-items {
+              position: absolute;
+              right: 0;
+              width: 180px;
+              list-style: none;
+              border-radius: 8px;
+              padding: 0;
+              background: var.$white;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+              li > button {
+                width: 180px;
+                border-radius: 8px;
+                background: none;
+                border: none;
+                padding: 8px 0;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                  color: #353535;
+                  background: var.$bg-active;
+                }
+              }
+            }
+          }
+        }
+
+        .hr {
+          align-self: flex-start;
+          width: 30%;
+          height: 1px;
+          background: var.$lines;
+          margin: 8px 0 16px 0;
+        }
+
+        .info-container {
+          margin-bottom: 16px;
+
+          .topic > span {
+            font-size: 18px;
+          }
+          .topic,
+          .desc {
+            font-size: 14px;
+            font-weight: 700;
+
+            span {
+              color: var.$light-grey;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .showcase-container {
+          .showcase-card {
+            background: black;
+            border-radius: 8px;
+            margin-bottom: 16px;
+
+            .showcase-image {
+              width: 100%;
+              aspect-ratio: 1 / 1;
+              object-fit: cover;
+              object-position: top;
+              border-radius: 8px 8px 0 0;
+            }
+
+            .text-container {
+              padding: 16px;
+
+              .status {
+                cursor: pointer;
+                padding: 3px 6px;
+                border-radius: 3px;
+                font-size: 10px;
+
+                i {
+                  margin-right: 8px;
+                }
+              }
+
+              .status.Approved {
+                color: var.$btn_success1;
+                background: var.$btn_success2;
+                border: 1px solid var.$btn_success2;
+              }
+
+              .status.Waiting {
+                color: var.$btn_waiting1;
+                background: var.$btn_waiting2;
+                border: 1px solid var.$btn_waiting2;
+              }
+
+              .id {
+                margin: 0;
+                margin-top: 12px;
+                font-size: 10px;
+                color: var.$dim_white;
+              }
+              .topic {
+                font-size: 18px;
+                color: var.$white;
+                margin: 3px 0;
+              }
+              .desc {
+                font-size: 12px;
+                color: var.$light-grey;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-side {
+      text-align: start;
+
+      .showtiktok-files-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: var.$white;
+
+        padding: 28px;
+        border-radius: 16px;
+
+        .top-container {
+          width: 100%;
+
+          .topic {
+            font-size: 24px;
+            font-weight: 900;
+          }
+
+          .setting-container {
+            position: relative;
+
+            i {
+              cursor: pointer;
+              font-size: 24px;
+            }
+
+            .setting-items {
+              position: absolute;
+              right: 0;
+              width: 180px;
+              list-style: none;
+              border-radius: 8px;
+              padding: 0;
+              background: var.$white;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+              li > button {
+                width: 180px;
+                border-radius: 8px;
+                background: none;
+                border: none;
+                padding: 8px 0;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                  color: #353535;
+                  background: var.$bg-active;
+                }
+              }
+            }
+          }
+        }
+
+        .hr {
+          align-self: flex-start;
+          width: 30%;
+          height: 1px;
+          background: var.$lines;
+          margin: 8px 0 16px 0;
+        }
+
+        .info-container {
+          margin-bottom: 16px;
+
+          .topic > span {
+            font-size: 18px;
+          }
+          .topic,
+          .desc {
+            font-size: 14px;
+            font-weight: 700;
+
+            span {
+              color: var.$light-grey;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .showtiktok-container {
+          @include var.center-content;
+          padding-left: 64px;
+
+          .showtiktok-card {
+            @include var.center-content;
+            flex-direction: column;
+            background: black;
+            width: 325px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+
+            .content-tiktok {
+              width: 325px;
+              margin-bottom: 0;
+            }
+
+            .text-container {
+              width: 325px;
+              text-align: start;
+              padding: 16px;
+              margin-top: -18px;
+
+              .status {
+                cursor: pointer;
+                padding: 3px 6px;
+                border-radius: 3px;
+                font-size: 16px;
+
+                i {
+                  margin-right: 8px;
+                }
+              }
+
+              .status.Approved {
+                color: var.$btn_success1;
+                background: var.$btn_success2;
+                border: 1px solid var.$btn_success2;
+              }
+
+              .status.Waiting {
+                color: var.$btn_waiting1;
+                background: var.$btn_waiting2;
+                border: 1px solid var.$btn_waiting2;
+              }
+
+              .id {
+                margin: 0;
+                margin-top: 12px;
+                font-size: 16px;
+                color: var.$dim_white;
+              }
+              .topic {
+                font-size: 24px;
+                color: var.$white;
+                margin: 3px 0;
+              }
+              .desc {
+                font-size: 16px;
+                color: var.$light-grey;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.a-home-form {
+  padding: 16px;
+
+  .topic {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .btn-container {
+    @include var.center-content;
+
+    .btn {
+      margin: 0 4px;
+      border-radius: 32px;
+      transition: all 0.3s ease-out;
+    }
+
+    .btn.btn-cancel {
+      color: var.$btn_danger1;
+      background: var.$btn_danger2;
+      border: 1px solid var.$btn_danger2;
+
+      &:hover {
+        color: var.$btn_danger2;
+        background: var.$btn_danger1;
+        border: 1px solid var.$btn_danger1;
+        box-shadow: 0 0 3px var.$btn_danger1;
+      }
+    }
+
+    .btn.btn-update {
+      color: var.$btn_update2;
+      background: var.$btn_update1;
+      border: 1px solid var.$btn_update1;
+
+      &:hover {
+        box-shadow: 0 0 3px var.$btn_update1;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 850px)  {
+  .a-home-container{
+      padding-top: 85px;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .a-home-container {
+    .content-container {
+      .right-side {
+        margin: 16px 0;
+
+        .showtiktok-files-container {
+          .showtiktok-container {
+            padding-left: 1vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .a-home-container {
+    padding: 85px 2vw;
+  }
+}
