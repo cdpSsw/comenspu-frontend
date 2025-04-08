@@ -416,8 +416,8 @@ const A_Team = () => {
 
       const res = await Axios.post(`${API_URL}/teams`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
-      });
+        withCredentials: true,  // ตรวจสอบว่า cookies ถูกส่งไปด้วย
+      });      
 
       if (res.status === 200) {
         alert(`Add New *Team Member Succesful.`);
