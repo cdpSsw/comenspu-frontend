@@ -97,7 +97,7 @@ const User_Main = () => {
         const token = res.data.token;
         if (token) {
           // ตั้งค่าคุกกี้ให้ได้ Token ที่ถูกต้อง
-          Cookies.set("token", token, { expires: 1, secure: false }); // secure: true ถ้าใช้ https
+          Cookies.set("token", token, { expires: 1, secure: window.location.protocol === "https:" });
         }
   
         // ปิด Modal
